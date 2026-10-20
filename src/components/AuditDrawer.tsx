@@ -1,0 +1,14 @@
+import { useEffect, useRef } from 'react';
+import type { VariantId } from '../data/content';
+import { variants } from '../data/content';
+import { auditUi, currentAudit, getAudit } from '../data/audit';
+import { Icon } from './Primitives';
+export function AuditDrawer({ variant }: {variant: VariantId}) {
+  const dialog=useRef<HTMLDialogElement>(null);
+  const trigger=useRef<HTMLButtonElement>(null);
+  const audit=getAudit(variant);
+  useEffect(()=>()=>{document.body.style.overflow='';},[]);
+  function open(){dialog.current?.showModal();document.body.style.overflow='hidden';}
+  function close(){dialog.current?.close();document.body.style.overflow='';trigger.current?.focus();}
+  return <><button className="audit-trigger" onClick={open} ref={trigger} aria-haspopup="dialog" aria-controls="audit-drawer"><Icon name="audit"/>{auditUi.title}<span>↗</span></button><dialog id="audit-drawer" className="audit-drawer" ref={dialog} aria-labelledby="audit-title" onCancel={event=>{event.preventDefault();close();}} onClick={event=>{if(event.target===event.currentTarget){const r=event.currentTarget.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right)close();}}}><div className="drawer-top"><div><p className="eyebrow">{auditUi.subtitle}</p><h2 id="audit-title">{auditUi.title}</h2></div><button className="close-button" onClick={close} aria-label={auditUi.close} autoFocus>×</button></div><div className="drawer-content"><p className="audit-variant">0{variant} / {variants[variant-1].name}</p><p className="data-note">{auditUi.poc}<br/>{auditUi.source}</p><section><h3>{auditUi.audience}</h3><p>{audit.audience}</p><h3>{auditUi.hypothesis}</h3><p>{audit.hypothesis}</p><h4>{auditUi.metric}</h4><p>{audit.metric}</p></section><section><h3>{auditUi.current}</h3>{(['strengths','ux','seo'] as const).map(key=><details key={key} open={key==='strengths'}><summary>{auditUi[key]}</summary><ul>{currentAudit[key].map(text=><li key={text}>{text}</li>)}</ul></details>)}</section><section><h3>{auditUi.changes}</h3><p className="data-note">{auditUi.levels}<br/>{auditUi.estimates}</p><ol className="changes-list">{audit.changes.map(item=><li key={item.name}><div className="change-meta"><span className={`level level-${item.level}`}>{item.level}</span><span>Nakład {item.effort}</span><span>Efekt: {item.impact}</span></div><h4>{item.name}</h4><p>{item.instruction}</p></li>)}</ol></section><section><h3>{auditUi.seoTitle}</h3><dl><dt>Title <span>{audit.title.length}/60</span></dt><dd>{audit.title}</dd><dt>Meta description <span>{audit.description.length}/155</span></dt><dd>{audit.description}</dd><dt>H1</dt><dd>{audit.h1}</dd></dl><h4>Struktura H2 / H3</h4><ul>{audit.headings.map(h=><li key={h}>{h}</li>)}</ul><details><summary>{auditUi.schema}</summary><pre>{audit.jsonld}</pre></details><p className="data-note">{auditUi.caveat}</p></section></div></dialog></>;
+}

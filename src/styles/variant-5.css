@@ -1,0 +1,13 @@
+/* P1 — trade enquiries and facilities, without a custom lead form. */
+.variant-5 .hero{background:#25282a}
+.variant-5 .hero-copy{border-left:5px solid var(--brand)}
+.variant-5 .b2b-section{background:#eae9e4;color:#252525}
+.variant-5 .b2b-section .eyebrow{color:#97313a}
+.variant-5 .b2b-copy>p:not(.eyebrow){color:#5c5b55}
+.variant-5 .b2b-phone small{color:#666}
+.variant-5 .b2b-links>a{border-color:#c5c4ba}
+.variant-5 .b2b-links>a>span:first-child{color:#9d3039}
+.variant-5 .b2b-links .email-link{color:#555}
+.variant-5 .path-card{background:white}
+.variant-5 .process-grid li{border-top:3px solid #b23e48}
+@media(min-width:1000px){.variant-5 .hero{grid-template-columns:50% 50%}.variant-5 .hero h1{font-size:54px}.variant-5 .paths-section{padding-top:45px}.variant-5 .b2b-section{padding-top:50px}}

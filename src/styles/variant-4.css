@@ -1,0 +1,16 @@
+/* P1 — compact retail hierarchy, native product frames higher on the page. */
+.variant-4{background:white}
+.variant-4 .hero{background:#efefec;color:#242424}
+.variant-4 .hero .eyebrow{color:#9e303a}
+.variant-4 .hero-description,.variant-4 .hero-signature{color:#62625b}
+.variant-4 .button-secondary{color:#333;border-color:#a4a49b}
+.variant-4 .button-secondary:hover{background:#ddd}
+.variant-4 .hero-signature{display:none}
+.variant-4 .category-number{display:none}
+.variant-4 .categories-section{padding-top:36px}
+.variant-4 .product-card{border-color:#deded9}
+.variant-4 .product-action{background:#f4f4f0;margin-left:-13px;margin-right:-13px;margin-bottom:-13px;padding:12px 13px}
+.variant-4 .hero-media{min-height:220px}
+@media(min-width:1000px){.variant-4 .hero{min-height:290px;grid-template-columns:58% 42%}.variant-4 .hero-copy{padding:33px 40px}.variant-4 .hero-media{min-height:290px}.variant-4 .hero h1{font-size:43px}.variant-4 .hero .eyebrow{margin-bottom:14px}.variant-4 .hero-description{margin:17px 0 20px;font-size:13px}.variant-4 .category-grid{grid-template-columns:repeat(8,1fr);gap:15px}.variant-4 .category-image img{aspect-ratio:1}.variant-4 .category-name{font-size:11px}.variant-4 .product-action{margin-left:-20px;margin-right:-20px;margin-bottom:-20px;padding:13px 20px}}
+/* Crop the original banner typography out of the retail hero. */
+.variant-4 .hero-media-fire>img{max-width:none;width:120%;height:120%;inset:auto;right:0;top:-10%}

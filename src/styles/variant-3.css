@@ -1,0 +1,10 @@
+/* P1 — a calmer, editorial treatment for manufacturer credibility. */
+.variant-3{background:#f4f1eb}
+.variant-3 .hero{border-top:5px solid var(--brand);background:#292723}
+.variant-3 .hero-media-caption{background:#292723}
+.variant-3 .section-heading h2{font-weight:600;letter-spacing:-1.4px}
+.variant-3 .brand-year{background:#9e303b}
+.variant-3 .reviews-section{background:#e6e0d6}
+.variant-3 .categories-section{border-top:1px solid #d4cec3;margin-top:40px}
+.variant-3 .faq-section{max-width:960px}
+@media(min-width:1000px){.variant-3 .hero{grid-template-columns:56% 44%}.variant-3 .hero-copy{padding-top:60px;padding-bottom:60px}.variant-3 .hero h1{font-size:57px}}

@@ -1,0 +1,4 @@
+/* P1 — preserves the existing homepage sequence, with the trust block raised. */
+.variant-1 .section-heading h2{border-left:4px solid var(--brand);padding-left:14px}
+.variant-1 .hero-media{border-bottom:4px solid var(--brand)}
+.variant-1 .categories-section{padding-top:60px}

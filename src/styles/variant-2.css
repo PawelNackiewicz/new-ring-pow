@@ -1,0 +1,13 @@
+/* P1 — navigation by goal, paired with static CMS cards (P2). */
+.variant-2 .hero{background:#eae8e2;color:#202020}
+.variant-2 .hero .eyebrow{color:#97303a}
+.variant-2 .hero-description,.variant-2 .hero-signature{color:#56554f}
+.variant-2 .button-secondary{color:#252525;border-color:#a5a39a}
+.variant-2 .button-secondary:hover{background:#d9d7ce}
+.variant-2 .paths-section{padding-top:44px}
+.variant-2 .path-card:first-child{background:#272724;color:white;border-color:#272724}
+.variant-2 .path-card:first-child p{color:#bdbdb7}
+.variant-2 .path-card:first-child .path-index{color:#efa1aa}
+.variant-2 .path-card:first-child .path-cta{border-color:#57574f}
+.variant-2 .category-number{display:none}
+@media(min-width:1000px){.variant-2 .hero{grid-template-columns:55% 45%}.variant-2 .hero h1{font-size:51px}.variant-2 .categories-compact .category-grid{grid-template-columns:repeat(8,1fr)}.variant-2 .categories-compact .category-image img{aspect-ratio:1}.variant-2 .categories-compact .category-name{font-size:11px}}
